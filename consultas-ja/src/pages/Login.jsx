@@ -1,9 +1,16 @@
-import  { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
-function Login() {
+function Login({ setUsername }) {
   const [nomeUsuario, setNomeUsuario] = useState('');
   const [senha, setSenha] = useState('');
+   const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+    setUsername(nomeUsuario); // Atualiza o estado global com o nome do usuário
+    navigate('/consultas'); // Redireciona para a página de consultas
+  };
 
   return (
   <div className="flex justify-center flex-row p-40">
@@ -11,7 +18,14 @@ function Login() {
       <h1>Sign In</h1>
         <div className="flex flex-col p-5">
             <h4>Usuário:</h4>
-            <input className="w-50 " onChange={() => setNomeUsuario(event.target.value)} id="usuario" type="text" placeholder="Nome do usuário"  />
+            <input
+              className="w-50 "
+              onChange={() => {
+                setNomeUsuario(event.target.value)
+              }}
+              id="usuario" type="text"
+              placeholder="Nome do usuário"
+            />
             <h4>Senha:</h4>
             <input className ="w-50" onChange={() => setSenha(event.target.value)} type="password" placeholder="Senha" maxLength="20"/>
 
@@ -25,7 +39,7 @@ function Login() {
       <div className="bg-slate-400 w-200 flex flex-col justify-center space-y-5 p-10">
         <h1 style={{color: 'white'}}>Bem vindo ao Consultas Já</h1>
         <h1 style={{color: 'white'}}>Ainda não é cadastrado?</h1>
-        <button className="bg-slate-600 border rounded-lg hover:bg-slate-500" style={{color: 'white'}}>Cadastre-se</button>
+        <button className="bg-slate-600 border rounded-lg hover:bg-slate-500" style={{color: 'white'}} onClick={handleLoginClick}>Cadastre-se</button>
       </div>
     </div>
     
