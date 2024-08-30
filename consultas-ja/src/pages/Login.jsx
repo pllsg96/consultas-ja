@@ -7,14 +7,16 @@ function Login() {
   const [senha, setSenha] = useState('');
 
   return (
-    <div style={{ backgroundColor: 'blue'}}>
-        <input onChange={() => setNomeUsuario(event.target.value)} id="usuario" type="text" placeholder="Nome do usuário"  />
-        <input onChange={() => setSenha(event.target.value)} type="password" placeholder="Senha" maxLength="20"/>
+    <div class="flex flex-col p-5">
+        <h4>Usuário:</h4>
+        <input class="w-50 " onChange={() => setNomeUsuario(event.target.value)} id="usuario" type="text" placeholder="Nome do usuário"  />
+        <h4>Senha:</h4>
+        <input class ="w-50" onChange={() => setSenha(event.target.value)} type="password" placeholder="Senha" maxLength="20"/>
 
         <h3>{nomeUsuario}</h3>
         <h3>{senha}</h3>
 
-        <button>Login</button>
+        <button class="bg-slate-400 text-black font-bold py-2 px-4 rounded border">Login</button>
           
     </div>
     
