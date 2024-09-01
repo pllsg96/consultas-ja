@@ -12,7 +12,7 @@ function Cadastro() {
                     <legend className="mb-5">Dados pessoais </legend>
                     
                     <p className="flex flex-col ">
-                        <label for="nome" className="mr-1">Nome:</label>
+                        <label htmlFor="nome" className="mr-1">Nome:</label>
                         <input 
                         id="nome"
                         type="text" 
@@ -22,7 +22,7 @@ function Cadastro() {
                     </p>
 
                     <p className="flex flex-col mt-2">
-                        <label for="data_nascimento" className="mr-1">Data de nascimento:</label>
+                        <label htmlFor="data_nascimento" className="mr-1">Data de nascimento:</label>
                         <input 
                         id="data_nascimento"
                         type="date" 
@@ -31,7 +31,7 @@ function Cadastro() {
                     </p>
 
                     <p className="flex flex-col mt-2">
-                        <label for="email" className="mr-1">E-mail:</label>
+                        <label htmlFor="email" className="mr-1">E-mail:</label>
                         <input 
                         id="email"
                         type="text" 
@@ -41,7 +41,7 @@ function Cadastro() {
                     </p>
 
                     <p className="flex flex-col mt-2">
-                        <label for="telefone" className="mr-1">Telefone:</label>
+                        <label htmlFor="telefone" className="mr-1">Telefone:</label>
                         <input 
                         id="telefone"
                         type="tel" 
@@ -55,7 +55,7 @@ function Cadastro() {
                     <legend className="mb-5 mt-8">Endereço</legend>
                     
                     <p className="flex flex-col ">
-                        <label for="estado" className="mr-1">Estado:</label>
+                        <label htmlFor="estado" className="mr-1">Estado:</label>
                         <select 
                         id="estado"
                         type="text" 
@@ -95,7 +95,7 @@ function Cadastro() {
                     </p>
 
                     <p className="flex flex-col mt-2">
-                        <label for="cidade" className="mr-1">Cidade:</label>
+                        <label htmlFor="cidade" className="mr-1">Cidade:</label>
                         <input 
                         id="cidade"
                         type="text" 
@@ -105,7 +105,7 @@ function Cadastro() {
                     </p>
 
                     <p className="flex flex-col mt-2">
-                        <label for="rua" className="mr-1">Rua:</label>
+                        <label htmlFor="rua" className="mr-1">Rua:</label>
                         <input 
                         id="rua"
                         type="text" 
@@ -115,7 +115,7 @@ function Cadastro() {
                     </p>
 
                     <p className="flex flex-col mt-2">
-                        <label for="numero_casa" className="mr-1">Número:</label>
+                        <label htmlFor="numero_casa" className="mr-1">Número:</label>
                         <input 
                         id="numero_casa"
                         type="number" 
@@ -125,7 +125,7 @@ function Cadastro() {
                     </p>
 
                     <p className="flex flex-col mt-2">
-                        <label for="complemento_endereco" className="mr-1">Complemento:</label>
+                        <label htmlFor="complemento_endereco" className="mr-1">Complemento:</label>
                         <input 
                         id="complemento_endereco"
                         type="text" 
