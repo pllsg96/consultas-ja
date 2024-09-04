@@ -197,7 +197,7 @@ const CadastroProvider = ({children}) => {
     )
 }
 
-export default CadastroProvider
+export default CadastroProvider;
 
 
   
