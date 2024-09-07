@@ -1,4 +1,5 @@
 import { useContext, useState, createContext } from "react";
+import AppContext from '../context/AppContext';
 
 
 export const CadastroContext = createContext()
@@ -6,7 +7,7 @@ export const CadastroContext = createContext()
 const CadastroProvider = ({children}) => {
 
     // Dados pessoais 
-    const [nomeCadastro, setNomeCadastro] = useState('')
+    // const [nomeCadastro, setNomeCadastro] = useState('')
     const [nascimentoCadastro, setNascimentoCadastro] = useState('')
     const [emailCadastro, setEmailCadastro] = useState('')
     const [telefoneCadastro, setTelefoneCadastro] = useState('')
@@ -18,10 +19,15 @@ const CadastroProvider = ({children}) => {
     const [numeroCadastro, setNumeroCadastro] = useState('')
     const [complementoCadastro, setComplementoCadastro] = useState('')
 
+  const {
+      nomeCadastro,
+      setNomeCadastro
+  } = useContext(AppContext);
+
     return (
 
         <CadastroContext.Provider value={{
-            nomeCadastro, setNomeCadastro,
+            // nomeCadastro, setNomeCadastro,
             nascimentoCadastro, setNascimentoCadastro,
             emailCadastro, setEmailCadastro,
             telefoneCadastro, setTelefoneCadastro,
