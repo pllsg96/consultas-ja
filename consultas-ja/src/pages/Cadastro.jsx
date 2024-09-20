@@ -1,23 +1,26 @@
-import { useContext, useState, createContext } from "react";
+import { useContext, createContext } from "react";
 import AppContext from '../context/AppContext';
+import { useNavigate } from 'react-router-dom';
 
 
 export const CadastroContext = createContext()
 
-const CadastroProvider = ({children}) => {
+const CadastroProvider = () => {
+
+    const navigate = useNavigate();
 
     // Dados pessoais 
     // const [nomeCadastro, setNomeCadastro] = useState('')
-    const [nascimentoCadastro, setNascimentoCadastro] = useState('')
-    const [emailCadastro, setEmailCadastro] = useState('')
-    const [telefoneCadastro, setTelefoneCadastro] = useState('')
+    // const [nascimentoCadastro, setNascimentoCadastro] = useState('')
+    // const [emailCadastro, setEmailCadastro] = useState('')
+    // const [telefoneCadastro, setTelefoneCadastro] = useState('')
 
     // Endereço
-    const [estadoCadastro, setEstadoCadastro] = useState('')
-    const [cidadeCadastro, setCidadeCadastro] = useState('')
-    const [ruaCadastro, setRuaCadastro] = useState('')
-    const [numeroCadastro, setNumeroCadastro] = useState('')
-    const [complementoCadastro, setComplementoCadastro] = useState('')
+    // const [estadoCadastro, setEstadoCadastro] = useState('')
+    // const [cidadeCadastro, setCidadeCadastro] = useState('')
+    // const [ruaCadastro, setRuaCadastro] = useState('')
+    // const [numeroCadastro, setNumeroCadastro] = useState('')
+    // const [complementoCadastro, setComplementoCadastro] = useState('')
 
   const {
       nomeCadastro,
@@ -26,24 +29,11 @@ const CadastroProvider = ({children}) => {
 
     return (
 
-        <CadastroContext.Provider value={{
-            // nomeCadastro, setNomeCadastro,
-            nascimentoCadastro, setNascimentoCadastro,
-            emailCadastro, setEmailCadastro,
-            telefoneCadastro, setTelefoneCadastro,
-
-            estadoCadastro, setEstadoCadastro,
-            cidadeCadastro, setCidadeCadastro,
-            ruaCadastro, setRuaCadastro,
-            numeroCadastro, setNumeroCadastro,
-            complementoCadastro, setComplementoCadastro
-            }}>
-
             <div 
             className='flex flex-col pr-20'
             >
                 <form className="space-y-4">
-                    <fieldset>
+                    {/* <fieldset> */}
                         <legend className="mb-5">Dados pessoais </legend>
                         
                         <p className="flex flex-col ">
@@ -53,22 +43,22 @@ const CadastroProvider = ({children}) => {
                             type="text" 
                             name="nome_usuario"
                             placeholder="Nome completo"
-                            value={nomeCadastro}
+                            value={nomeCadastro.nome}
                             className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setNomeCadastro(event.target.value)}/>
+                            onChange={(event) => setNomeCadastro({'nome': event.target.value})}/>
                         </p>
-                        <p className="flex flex-col mt-2">
+                         <p className="flex flex-col mt-2">
                             <label htmlFor="data_nascimento" className="mr-1">Data de nascimento:</label>
                             <input 
                             id="data_nascimento"
                             type="date" 
                             name="data_nascimento"
-                            value={nascimentoCadastro}
+                            value={nomeCadastro.nascimento}
                             className="rounded-lg border  focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setNascimentoCadastro(event.target.value)}/>
+                            onChange={(event) => setNomeCadastro({...nomeCadastro, 'nascimento': event.target.value})}/>
                         </p>
 
-                        <p className="flex flex-col mt-2">
+                       {/* <p className="flex flex-col mt-2">
                             <label htmlFor="email" className="mr-1">E-mail:</label>
                             <input 
                             id="email"
@@ -185,18 +175,19 @@ const CadastroProvider = ({children}) => {
                             onChange={(event) => setComplementoCadastro(event.target.value)}/>
                         </p>
 
-                    </fieldset>
+                    </fieldset> */}
                 </form>
 
                 <button 
                 type="button"
                 className="m-auto mt-10 bg-slate-300 w-20 ring-2 ring-slate-400 rounded-lg hover:bg-slate-400 hover:ring-white"
-                onClick={() => console.log(estadoCadastro)}>
+                onClick={() => navigate('/xablau')}>
                     Cadastrar
-                </button>
+            </button>
+            <button type="submit" onClick={() => navigate('/')}>Submit</button>
             </div>
 
-        </CadastroContext.Provider>
+        // </CadastroContext.Provider>
 
         
        

@@ -2,8 +2,9 @@ import AppProvider from './context/AppProvider';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import Login from "./pages/Login";
 import Consultas from "./pages/Consultas";
-import CadastroProvider from "./pages/Cadastro";
+import Cadastro from "./pages/Cadastro";
 import Xablau from './pages/xablau';
+
 
 
 
@@ -26,6 +27,9 @@ function App() {
             <h1 style={{color: 'white'}}>Ainda não é cadastrado?</h1>
             <Link to="/cadastro" className="flex justify-center bg-slate-600 border rounded-lg hover:bg-slate-500 text-white p-2">
               Cadastre-se
+            </Link>
+            <Link to="/" className="flex justify-center bg-slate-600 border rounded-lg hover:bg-slate-500 text-white p-2">
+              Cadastre-se2
             </Link>
           </div>
         </div>
