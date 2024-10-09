@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Consultas from "./pages/Consultas";
 import Cadastro from "./pages/Cadastro";
 import Xablau from './pages/xablau';
+import Buscas from './pages/Buscas';
 
 
 
@@ -19,6 +20,7 @@ function App() {
               <Route path='/consultas' element={<Consultas />} />
               <Route path='/cadastro' element={<Cadastro />} />
               <Route path='/xablau' element={<Xablau />} />
+              <Route path='/buscas' element={<Buscas />} />
             </Routes>
           </div>
 

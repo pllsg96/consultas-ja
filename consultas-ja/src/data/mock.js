@@ -1,4 +1,4 @@
-const mockData = [
+const mockDataPessoas = [
   {
     nome: 'Fulano da Silva',
     cpf: '123.456.789-00',
@@ -38,8 +38,40 @@ const mockData = [
     telefone: '(51) 95555-5555',
     endereco: 'Rua Teste 202, Bairro Fictício, Cidade Modelo',
     imageProfile: 'https://example.com/profile5.jpg'
+  },
+  {
+    nome: 'João Pereira',
+    cpf: '654.321.987-00',
+    rg: 'PE-65.432.198',
+    telefone: '(51) 95555-5555',
+    endereco: 'Rua Teste 202, Bairro Fictício, Cidade Modelo',
+    imageProfile: 'https://example.com/profile5.jpg'
+  },
+  {
+    nome: 'João Pereira',
+    cpf: '654.321.987-00',
+    rg: 'PE-65.432.198',
+    telefone: '(51) 95555-5555',
+    endereco: 'Rua Teste 202, Bairro Fictício, Cidade Modelo',
+    imageProfile: 'https://example.com/profile5.jpg'
+  },
+  {
+    nome: 'João Pereira',
+    cpf: '654.321.987-00',
+    rg: 'PE-65.432.198',
+    telefone: '(51) 95555-5555',
+    endereco: 'Rua Teste 202, Bairro Fictício, Cidade Modelo',
+    imageProfile: 'https://example.com/profile5.jpg'
+  },
+  {
+    nome: 'João Pereira',
+    cpf: '654.321.987-00',
+    rg: 'PE-65.432.198',
+    telefone: '(51) 95555-5555',
+    endereco: 'Rua Teste 202, Bairro Fictício, Cidade Modelo',
+    imageProfile: 'https://example.com/profile5.jpg'
   }
 ];
 
 
-export default mockData;
+export default mockDataPessoas;
