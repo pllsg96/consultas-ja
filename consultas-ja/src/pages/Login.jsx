@@ -30,6 +30,8 @@ function Login() {
         <button className="bg-slate-400 text-black font-bold py-2 px-4 rounded border">Login</button>
     </div>
 
+    
+
   )
  }       
           

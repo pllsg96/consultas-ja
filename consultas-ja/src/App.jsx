@@ -24,16 +24,7 @@ function App() {
             </Routes>
           </div>
 
-          <div className="bg-slate-400 w-64 flex flex-col justify-center space-y-5 p-10">
-            <h1 style={{color: 'white'}}>Bem-vindo ao Consultas Já</h1>
-            <h1 style={{color: 'white'}}>Ainda não é cadastrado?</h1>
-            <Link to="/cadastro" className="flex justify-center bg-slate-600 border rounded-lg hover:bg-slate-500 text-white p-2">
-              Cadastre-se
-            </Link>
-            <Link to="/" className="flex justify-center bg-slate-600 border rounded-lg hover:bg-slate-500 text-white p-2">
-              Cadastre-se2
-            </Link>
-          </div>
+          
         </div>
       </BrowserRouter>
     </AppProvider>
