@@ -23,7 +23,7 @@ function App() {
               <Route path='/buscas' element={<Buscas />} />
             </Routes>
           </div>
-
+    
           
         </div>
       </BrowserRouter>
