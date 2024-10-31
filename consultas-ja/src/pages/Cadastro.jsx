@@ -9,30 +9,32 @@ const CadastroProvider = () => {
 
     const navigate = useNavigate();
 
-    // Dados pessoais 
-    // const [nomeCadastro, setNomeCadastro] = useState('')
-    // const [nascimentoCadastro, setNascimentoCadastro] = useState('')
-    // const [emailCadastro, setEmailCadastro] = useState('')
-    // const [telefoneCadastro, setTelefoneCadastro] = useState('')
-
-    // Endereço
-    // const [estadoCadastro, setEstadoCadastro] = useState('')
-    // const [cidadeCadastro, setCidadeCadastro] = useState('')
-    // const [ruaCadastro, setRuaCadastro] = useState('')
-    // const [numeroCadastro, setNumeroCadastro] = useState('')
-    // const [complementoCadastro, setComplementoCadastro] = useState('')
 
   const {
       nomeCadastro,
       setNomeCadastro
   } = useContext(AppContext);
 
+  class Cadastro {
+    constructor(nome, cpf, telefone, dados_adicionais) {
+        this.nome = nome
+        this.cpf = cpf
+        this.telefone = telefone
+        this.dados_adicionais = dados_adicionais
+    }
+  }
+
+    function debug() {
+        const cadastro = new Cadastro(nomeCadastro[nome], nomeCadastro[cpf], nomeCadastro[telefone], nomeCadastro[dados_adicionais])
+        console.log(cadastro)
+    }
+
     return (
 
             <div 
-            className='flex flex-col pr-20'
+            className='flex flex-col p-5'
             >
-                <form className="space-y-4">
+                <form className="space-x-2">
                     {/* <fieldset> */}
                         <legend className="mb-5">Dados pessoais </legend>
                         
@@ -47,144 +49,51 @@ const CadastroProvider = () => {
                             className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400"
                             onChange={(event) => setNomeCadastro({'nome': event.target.value})}/>
                         </p>
-                         <p className="flex flex-col mt-2">
-                            <label htmlFor="data_nascimento" className="mr-1">Data de nascimento:</label>
-                            <input 
-                            id="data_nascimento"
-                            type="date" 
-                            name="data_nascimento"
-                            value={nomeCadastro.nascimento}
-                            className="rounded-lg border  focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setNomeCadastro({...nomeCadastro, 'nascimento': event.target.value})}/>
-                        </p>
 
-                       {/* <p className="flex flex-col mt-2">
-                            <label htmlFor="email" className="mr-1">E-mail:</label>
+                        <p className="flex flex-col ">
+                            <label htmlFor="cpf" className="mr-1">CPF:</label>
                             <input 
-                            id="email"
+                            id="cpf"
                             type="text" 
-                            name="email_usuario"
-                            value={emailCadastro}
-                            placeholder="E-mail"
-                            className="rounded-lg border  focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setEmailCadastro(event.target.value)}/>
+                            name="cpf_usuario"
+                            placeholder="Digite o CPF"
+                            value={nomeCadastro.cpf}
+                            className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400"
+                            onChange={(event) => setNomeCadastro({...nomeCadastro,'cpf': event.target.value})}/>
                         </p>
 
-                        <p className="flex flex-col mt-2">
-                            <label htmlFor="telefone" className="mr-1">Telefone:</label>
+                        <p className="flex flex-col ">
+                            <label htmlFor="telefoe" className="mr-1">Telefone:</label>
                             <input 
                             id="telefone"
-                            type="tel" 
+                            type="text" 
                             name="telefone_usuario"
-                            value={telefoneCadastro}
-                            placeholder="(XX)9XXXX-XXXX"
-                            className="rounded-lg border  focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setTelefoneCadastro(event.target.value)}/>
-                        </p>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend className="mb-5 mt-8">Endereço</legend>
-                        
-                        <p className="flex flex-col ">
-                            <label htmlFor="estado" className="mr-1">Estado:</label>
-                            <select 
-                            id="estado"
-                            name="estado"
-                            value={estadoCadastro}
-                            className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400 bg-white"
-                            onChange={(event) => setEstadoCadastro(event.target.value)}>
-
-                                <option value="">Selecione...</option>
-                                <option value="Acre">Acre</option>
-                                <option value="Alagoas">Alagoas</option>
-                                <option value="Amapá">Amapá</option>
-                                <option value="Amazonas">Amazonas</option>
-                                <option value="Bahía">Bahía</option>
-                                <option value="Ceará">Ceará</option>
-                                <option value="Distrito Federal">Distrito Federal</option>
-                                <option value="Espirito Santo">Espirito Santo</option>
-                                <option value="Goiás">Goiás</option>
-                                <option value="Maranhão">Maranhão</option>
-                                <option value="Mato Grosso">Mato Grosso</option>
-                                <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-                                <option value="Minas Gerais">Minas Gerais</option>
-                                <option value="Pará">Pará</option>
-                                <option value="Paraíba">Paraíba</option>
-                                <option value="Paraná">Paraná</option>
-                                <option value="Pernambuco">Pernambuco</option>
-                                <option value="Piauí">Piauí</option>
-                                <option value="Rio de Janeiro">Rio de Janeiro</option>
-                                <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-                                <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                                <option value="Rondônia">Rondônia</option>
-                                <option value="Roraima">Roraima</option>
-                                <option value="Santa Catarina">Santa Catarina</option>
-                                <option value="São Paulo">São Paulo</option>
-                                <option value="Sergipe">Sergipe</option>
-                                <option value="Tocantins">Tocantins</option>
-
-                            </select>
-                        </p>
-
-                        <p className="flex flex-col mt-2">
-                            <label htmlFor="cidade" className="mr-1">Cidade:</label>
-                            <input 
-                            id="cidade"
-                            type="text" 
-                            name="cidade"
-                            value={cidadeCadastro}
-                            placeholder="Ex: Maceió"
+                            placeholder="EX: (82)99999-9999"
+                            value={nomeCadastro.telefone}
                             className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setCidadeCadastro(event.target.value)}/>
+                            onChange={(event) => setNomeCadastro({...nomeCadastro,'telefone': event.target.value})}/>
                         </p>
 
-                        <p className="flex flex-col mt-2">
-                            <label htmlFor="rua" className="mr-1">Rua:</label>
+                        <p className="flex flex-col ">
+                            <label htmlFor="dados_adicionais" className="mr-1">Dados adicionais:</label>
                             <input 
-                            id="rua"
+                            id="dados_adicionais"
                             type="text" 
-                            name="rua"
-                            value={ruaCadastro}
-                            placeholder="Ex.: Av. Getúlio Vargas"
-                            className="rounded-lg border  focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setRuaCadastro(event.target.value)}/>
+                            name="dados_adicionais"
+                            placeholder="Xablau"
+                            value={nomeCadastro.dados_adicionais}
+                            className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400"
+                            onChange={(event) => setNomeCadastro({...nomeCadastro,'dados_adicionais': event.target.value})}/>
                         </p>
-
-                        <p className="flex flex-col mt-2">
-                            <label htmlFor="numero_casa" className="mr-1">Número:</label>
-                            <input 
-                            id="numero_casa"
-                            type="number" 
-                            name="numero_casa"
-                            value={numeroCadastro}
-                            placeholder="Ex: 366"
-                            className="rounded-lg border  focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setNumeroCadastro(event.target.value)}/>
-                        </p>
-
-                        <p className="flex flex-col mt-2">
-                            <label htmlFor="complemento_endereco" className="mr-1">Complemento:</label>
-                            <input 
-                            id="complemento_endereco"
-                            type="text" 
-                            name="complemento_endereco"
-                            value={complementoCadastro}
-                            placeholder="Opcional..."
-                            className="rounded-lg border  focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setComplementoCadastro(event.target.value)}/>
-                        </p>
-
-                    </fieldset> */}
+                       
                 </form>
 
-                <button 
-                type="button"
+                <button type="submit"
                 className="m-auto mt-10 bg-slate-300 w-20 ring-2 ring-slate-400 rounded-lg hover:bg-slate-400 hover:ring-white"
-                onClick={() => navigate('/xablau')}>
-                    Cadastrar
-            </button>
-            <button type="submit" onClick={() => navigate('/')}>Submit</button>
+                onClick={() => 
+                    {const cadastro = new Cadastro(nomeCadastro.nome, nomeCadastro.cpf, nomeCadastro.telefone, nomeCadastro.dados_adicionais)
+                    console.log(cadastro)}}
+                    >Submit</button>
             </div>
 
         // </CadastroContext.Provider>
