@@ -1,4 +1,4 @@
-import { useContext, createContext } from "react";
+import { useContext, createContext, useState } from "react";
 import AppContext from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,24 +10,24 @@ const CadastroProvider = () => {
     const navigate = useNavigate();
 
 
-  const {
-      nomeCadastro,
-      setNomeCadastro
-  } = useContext(AppContext);
+  const [dadosCadastro, setDadosCadastro] = useState ({
+        nome: '',
+        cpf: '',
+        telefone: '',
+        dados_adicionais: ''
+  })
 
-  class Cadastro {
-    constructor(nome, cpf, telefone, dados_adicionais) {
-        this.nome = nome
-        this.cpf = cpf
-        this.telefone = telefone
-        this.dados_adicionais = dados_adicionais
-    }
-  }
 
-    function debug() {
-        const cadastro = new Cadastro(nomeCadastro[nome], nomeCadastro[cpf], nomeCadastro[telefone], nomeCadastro[dados_adicionais])
-        console.log(cadastro)
-    }
+function CadastraObjeto() {
+
+        let chave = localStorage.length + 1
+
+        localStorage.setItem(chave, JSON.stringify(dadosCadastro))
+}
+        
+        
+            
+       
 
     return (
 
@@ -45,9 +45,9 @@ const CadastroProvider = () => {
                             type="text" 
                             name="nome_usuario"
                             placeholder="Nome completo"
-                            value={nomeCadastro.nome}
+                            value={dadosCadastro.nome}
                             className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setNomeCadastro({'nome': event.target.value})}/>
+                            onChange={(event) => setDadosCadastro({'nome': event.target.value})}/>
                         </p>
 
                         <p className="flex flex-col ">
@@ -57,9 +57,9 @@ const CadastroProvider = () => {
                             type="text" 
                             name="cpf_usuario"
                             placeholder="Digite o CPF"
-                            value={nomeCadastro.cpf}
+                            value={dadosCadastro.cpf}
                             className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setNomeCadastro({...nomeCadastro,'cpf': event.target.value})}/>
+                            onChange={(event) => setDadosCadastro({...dadosCadastro,'cpf': event.target.value})}/>
                         </p>
 
                         <p className="flex flex-col ">
@@ -69,9 +69,9 @@ const CadastroProvider = () => {
                             type="text" 
                             name="telefone_usuario"
                             placeholder="EX: (82)99999-9999"
-                            value={nomeCadastro.telefone}
+                            value={dadosCadastro.telefone}
                             className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setNomeCadastro({...nomeCadastro,'telefone': event.target.value})}/>
+                            onChange={(event) => setDadosCadastro({...dadosCadastro,'telefone': event.target.value})}/>
                         </p>
 
                         <p className="flex flex-col ">
@@ -81,18 +81,16 @@ const CadastroProvider = () => {
                             type="text" 
                             name="dados_adicionais"
                             placeholder="Xablau"
-                            value={nomeCadastro.dados_adicionais}
+                            value={dadosCadastro.dados_adicionais}
                             className="rounded-lg border focus:outline-none focus:ring-2 focus:ring-slate-400"
-                            onChange={(event) => setNomeCadastro({...nomeCadastro,'dados_adicionais': event.target.value})}/>
+                            onChange={(event) => setDadosCadastro({...dadosCadastro,'dados_adicionais': event.target.value})}/>
                         </p>
                        
                 </form>
 
                 <button type="submit"
                 className="m-auto mt-10 bg-slate-300 w-20 ring-2 ring-slate-400 rounded-lg hover:bg-slate-400 hover:ring-white"
-                onClick={() => 
-                    {const cadastro = new Cadastro(nomeCadastro.nome, nomeCadastro.cpf, nomeCadastro.telefone, nomeCadastro.dados_adicionais)
-                    console.log(cadastro)}}
+                onClick = {CadastraObjeto}
                     >Submit</button>
             </div>
 
