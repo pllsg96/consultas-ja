@@ -24,9 +24,6 @@ function CadastraObjeto() {
 
         localStorage.setItem(chave, JSON.stringify(dadosCadastro))
 }
-        
-        
-            
        
 
     return (

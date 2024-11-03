@@ -1,4 +1,5 @@
 
+import { Tabela } from "../components/Tabela";
 
 function Consultas( ) {
   return (
@@ -21,127 +22,7 @@ function Consultas( ) {
         >Pesquisar</button>
       </div>
 
-      <div className="overflow-x-auto max-h-64 overflow-y-auto">
-      <table className="table-auto text-left border-collapse">
-        <thead className="sticky top-0">
-          <tr className="bg-gray-300">
-            <th className="px-4 py-2 border">Nome</th>
-            <th className="px-4 py-2 border">CPF</th>
-            <th className="px-4 py-2 border">Telefone</th>
-            <th className="px-4 py-2 border">Outros dados</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-          <tr className="even:bg-gray-100">
-            <td className="px-4 py-2 border whitespace-nowrap">André Calheiros de Jesus</td>
-            <td className="px-4 py-2 border whitespace-nowrap">123.456.789-10</td>
-            <td className="px-4 py-2 border whitespace-nowrap">8299999-9999</td>
-            <td className="px-4 py-2 border whitespace-nowrap">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-
-      </div>
+      <Tabela></Tabela>
       
       
     </div>
